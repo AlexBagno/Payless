@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/cup_search"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_circle_b" />
+
+    <ImageView
+        android:id="@+id/cup"
+        android:layout_width="74dp"
+        android:layout_height="73dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cup_search"
+        app:layout_constraintEnd_toEndOf="@+id/cup_search"
+        app:layout_constraintStart_toStartOf="@+id/cup_search"
+        app:layout_constraintTop_toTopOf="@+id/cup_search"
+        app:srcCompat="@drawable/cup_ic" />
+
+    <ImageButton
+        android:id="@+id/hanger_search"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/cup_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_circle_b" />
+
+    <ImageView
+        android:id="@+id/hanger"
+        android:layout_width="67dp"
+        android:layout_height="53dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hanger_search"
+        app:layout_constraintEnd_toEndOf="@+id/hanger_search"
+        app:layout_constraintStart_toStartOf="@+id/hanger_search"
+        app:layout_constraintTop_toTopOf="@+id/hanger_search"
+        app:srcCompat="@drawable/hanger_ic" />
+
+    <ImageButton
+        android:id="@+id/wifi_search"
+        android:layout_width="101dp"
+        android:layout_height="101dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/hanger_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bg_circle_b" />
+
+    <ImageView
+        android:id="@+id/wifi"
+        android:layout_width="67dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wifi_search"
+        app:layout_constraintEnd_toEndOf="@+id/wifi_search"
+        app:layout_constraintStart_toStartOf="@+id/wifi_search"
+        app:layout_constraintTop_toTopOf="@+id/wifi_search"
+        app:srcCompat="@drawable/wifi_ic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
