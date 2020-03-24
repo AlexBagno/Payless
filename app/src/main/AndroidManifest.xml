@@ -30,7 +30,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Map_Activity1"
+            android:name=".Map_activity"
             android:label="@string/title_activity_map_1"></activity>
         <activity android:name=".SearchActivity">
             <intent-filter>
@@ -39,7 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Map_activity" />
+
     </application>
 
 </manifest>
