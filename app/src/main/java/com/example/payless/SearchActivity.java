@@ -27,7 +27,7 @@ public class SearchActivity extends AppCompatActivity {
         cup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SearchActivity.this,Map_activity.class));
+                startActivity(new Intent(SearchActivity.this,MapsActivity2.class));
             }
         });
     }
