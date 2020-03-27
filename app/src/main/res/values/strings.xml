@@ -3,4 +3,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_map_1">Map</string>
     <string name="title_activity_maps2">Map</string>
+    <string name="map_key" translatable="false">AIzaSyD6X7urtdLtwx_skembkHcs3fqZkTAzYN4</string>
 </resources>
