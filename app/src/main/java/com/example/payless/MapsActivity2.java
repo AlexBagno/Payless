@@ -95,10 +95,10 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Your location");
+        MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Your location").flat(true).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 5));
-        googleMap.addMarker(markerOptions).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
+        googleMap.addMarker(markerOptions);
 
 
     }
