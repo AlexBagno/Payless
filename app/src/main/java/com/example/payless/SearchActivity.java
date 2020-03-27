@@ -90,7 +90,7 @@ public class SearchActivity extends AppCompatActivity {
                 placeCoors[i]=places.get(i).coor;
 
             }
-            
+
 
 
         }
