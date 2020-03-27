@@ -87,7 +87,7 @@ public class SearchActivity extends AppCompatActivity {
     private void fillCoors(String tag){
         for (Integer i = 0; i < places.size(); i++) {
             if(places.get(i).tag==tag){
-                placeCoors[i]=places.get(i).coor;
+                placeCoors[i] =places.get(i).coor;
 
             }
 
