@@ -56,7 +56,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
          fetchLastLocation();
        // onMapReady(map);
        // createMapView();
-       // configureBackButton();
+        configureBackButton();
         foundPlaces = new ArrayList<Place>();
 
 
@@ -140,7 +140,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         } catch (NullPointerException e) {
             Log.e("mapApp",e.toString());
         }
-    }
+    }*/
 
 
     private void configureBackButton(){
@@ -154,7 +154,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
         }
 
-    }*/
+    }
 
 }
 
