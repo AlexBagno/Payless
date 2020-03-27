@@ -19,60 +19,93 @@
         app:layout_constraintVertical_bias="0.0"
         tools:context="com.example.payless.Map_Activity2"></fragment>
 
-    <ImageButton
-        android:id="@+id/back_button"
-        android:layout_width="61dp"
-        android:layout_height="35dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/button_bg" />
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="204dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="61dp"
+            android:layout_height="35dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="350dp"
+            android:layout_marginRight="350dp"
+            android:background="#00FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/button_bg" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="54dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="16dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"
-        app:srcCompat="@drawable/arrowl" />
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="204dp"
+            android:layout_height="62dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="650dp"
+            android:layout_marginEnd="101dp"
+            android:layout_marginRight="101dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="47dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="16dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:srcCompat="@drawable/arrowr" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="54dp"
+            android:layout_height="63dp"
+            android:layout_alignBottom="@+id/spinner"
+            android:layout_marginLeft="58dp"
+            android:layout_marginBottom="0dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spinner"
+            app:srcCompat="@drawable/arrowl" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="42dp"
-        android:layout_height="37dp"
-        android:rotation="270"
-        app:layout_constraintBottom_toBottomOf="@+id/back_button"
-        app:layout_constraintEnd_toEndOf="@+id/back_button"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="@+id/back_button"
-        app:layout_constraintTop_toTopOf="@+id/back_button"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/arrowup" />
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="47dp"
+            android:layout_height="63dp"
+            android:layout_alignBottom="@+id/spinner"
+            android:layout_marginLeft="305dp"
+            android:layout_marginBottom="0dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toEndOf="@+id/spinner"
+            app:srcCompat="@drawable/arrowr" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="43dp"
+            android:layout_height="37dp"
+            android:layout_alignEnd="@+id/back_button"
+            android:layout_alignRight="@+id/back_button"
+            android:layout_alignBottom="@+id/back_button"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginBottom="-2dp"
+            android:rotation="270"
+            app:layout_constraintBottom_toBottomOf="@+id/back_button"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/back_button"
+            app:layout_constraintTop_toTopOf="@+id/back_button"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/arrowup" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
