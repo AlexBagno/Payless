@@ -43,6 +43,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         configureBackButton();
         foundPlaces = new ArrayList<Place>();
 
+
     }
 
 
