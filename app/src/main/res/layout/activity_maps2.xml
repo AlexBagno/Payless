@@ -11,11 +11,15 @@
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
         tools:context=".MapsActivity2" />
+
 
     <ImageButton
         android:id="@+id/back_button"
@@ -100,6 +104,7 @@
             app:layout_constraintTop_toTopOf="@+id/back_button"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/arrowup" />
+
 
 
 

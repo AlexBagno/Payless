@@ -49,13 +49,9 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        /* mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);*/
+
          fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
          fetchLastLocation();
-       // onMapReady(map);
-       // createMapView();
         configureBackButton();
         foundPlaces = new ArrayList<Place>();
 
@@ -115,32 +111,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         }
     }
 
-    /*void addMarker(){
-        if(null != map){
-            LatLng dnepr = new LatLng(48.45, 34.98);
-            map.addMarker(new MarkerOptions().position(dnepr).title("Your town")).setIcon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(dnepr,10));
-        }
-    }*/
 
-
-
-
-
-
-   /* private void createMapView(){
-        try{
-            if(map == null){
-                ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
-                if (map == null){
-                    Toast.makeText(getApplicationContext(), "Error creating map", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        } catch (NullPointerException e) {
-            Log.e("mapApp",e.toString());
-        }
-    }*/
 
 
     private void configureBackButton(){
