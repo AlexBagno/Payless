@@ -11,6 +11,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     SupportMapFragment mapFragment;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
+    Button gas;
     private static final  int REQUEST_CODE = 101;
 
     private List<Place> foundPlaces ;
@@ -127,6 +129,14 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
     }
 
+    public void gas(View view, GoogleMap googleMap) {
+        gas=findViewById(R.id.Button5);
+        LatLng okko01 = new LatLng(48.5147222, 35.05383333333333);
+        MarkerOptions gas = new MarkerOptions().position(okko01).title("ОККО").flat(true).icon(
+                BitmapDescriptorFactory
+                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        googleMap.addMarker(gas);
+    }
 }
 
 
