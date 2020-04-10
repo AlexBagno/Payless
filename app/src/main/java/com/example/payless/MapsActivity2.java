@@ -51,11 +51,13 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
+        gas=findViewById(R.id.Button5);
 
          fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
          fetchLastLocation();
         configureBackButton();
         foundPlaces = new ArrayList<Place>();
+
 
 
     }
@@ -99,6 +101,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         googleMap.addMarker(markerOptions);
 
 
+
     }
 
 
@@ -130,11 +133,8 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
     }
 
     public void gas(View view, GoogleMap googleMap) {
-        gas=findViewById(R.id.Button5);
-        LatLng okko01 = new LatLng(48.5147222, 35.05383333333333);
-        MarkerOptions gas = new MarkerOptions().position(okko01).title("ОККО").flat(true).icon(
-                BitmapDescriptorFactory
-                        .defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+        LatLng okko01 = new LatLng(48.5147, 35.0538);
+        MarkerOptions gas = new MarkerOptions().position(okko01).title("ОККО").flat(true).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
         googleMap.addMarker(gas);
     }
 }
