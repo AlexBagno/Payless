@@ -136,11 +136,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
     }
 
-    public void gas(View view, GoogleMap googleMap) {
-        LatLng okko01 = new LatLng(48.5147, 35.0538);
-        MarkerOptions gas = new MarkerOptions().position(okko01).title("ОККО").flat(true).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
-        googleMap.addMarker(gas);
-    }
 
 }
 
