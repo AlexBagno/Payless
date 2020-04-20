@@ -56,7 +56,6 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
         gas=findViewById(R.id.Button5);
-
          fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
          fetchLastLocation();
         configureBackButton();
