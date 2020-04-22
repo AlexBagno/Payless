@@ -34,7 +34,6 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
     SupportMapFragment mapFragment;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
-    Button gas;
     private static final  int REQUEST_CODE = 101;
 
     @Override
@@ -43,7 +42,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_maps_shop);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
-        configureBackButton();
+       // configureBackButton();
 
 
 
@@ -110,7 +109,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
 
 
 
-    private void configureBackButton(){
+    /*private void configureBackButton(){
         back = findViewById(R.id.back_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,5 +120,5 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
 
         }
 
-    }
+    }*/
 }
