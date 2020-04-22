@@ -17,7 +17,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_circle_b" />
+         />
 
     <ImageView
         android:id="@+id/cup"
@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="@+id/cup_search"
         app:layout_constraintTop_toTopOf="@+id/cup_search"
         app:layout_constraintVertical_bias="0.535"
-        app:srcCompat="@drawable/cup_ic" />
+        app:srcCompat="@drawable/g1186" />
 
     <ImageButton
         android:id="@+id/hanger_search"
@@ -42,17 +42,17 @@
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/cup_search"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_circle_b" />
+        />
 
     <ImageView
         android:id="@+id/hanger"
-        android:layout_width="67dp"
-        android:layout_height="53dp"
+        android:layout_width="88dp"
+        android:layout_height="77dp"
         app:layout_constraintBottom_toBottomOf="@+id/hanger_search"
         app:layout_constraintEnd_toEndOf="@+id/hanger_search"
         app:layout_constraintStart_toStartOf="@+id/hanger_search"
         app:layout_constraintTop_toTopOf="@+id/hanger_search"
-        app:srcCompat="@drawable/hanger_ic" />
+        app:srcCompat="@drawable/g1178" />
 
     <ImageButton
         android:id="@+id/wifi_search"
@@ -67,17 +67,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/hanger_search"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bg_circle_b" />
+         />
 
     <ImageView
         android:id="@+id/wifi"
-        android:layout_width="67dp"
-        android:layout_height="55dp"
+        android:layout_width="94dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="@+id/wifi_search"
         app:layout_constraintEnd_toEndOf="@+id/wifi_search"
         app:layout_constraintStart_toStartOf="@+id/wifi_search"
         app:layout_constraintTop_toTopOf="@+id/wifi_search"
-        app:srcCompat="@drawable/wifi_ic" />
+        app:srcCompat="@drawable/g1194" />
 
 
 
