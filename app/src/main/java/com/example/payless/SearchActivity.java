@@ -17,7 +17,7 @@ public class SearchActivity extends AppCompatActivity {
     ImageButton hanger;
     ImageButton wifi;
     ArrayList<Place> places ;
-    String[] placeCoors;
+    ArrayList<Place> placeCoors;
     String neededTag;
 
     @Override
@@ -30,6 +30,11 @@ public class SearchActivity extends AppCompatActivity {
         configureWIFIButton();
 
         places = new ArrayList<Place>();
+
+        places.set(1, new Place("48.4720435,34.9996899","Испанское каппучино","cafe"));
+        places.set(2, new Place("48.449755,35.0430067","Шелк от Ульяны","Clothes"));
+        places.set(3, new Place("48.4566809,35.0582073","Hotspot1","hotspot"));
+        places.set(4, new Place("48.453001,35.0414132","Испанское латте","cafe"));
 
 
     }
@@ -85,9 +90,9 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void fillCoors(String tag){
-        for (Integer i = 0; i < places.size(); i++) {
+        for (Integer i = 1; i < places.size(); i++) {
             if(places.get(i).tag==tag){
-                placeCoors[i] =places.get(i).coor;
+                placeCoors.set(i,places.get(i));
 
             }
 
