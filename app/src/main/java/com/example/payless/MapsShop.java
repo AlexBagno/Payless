@@ -35,6 +35,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
     private static final  int REQUEST_CODE = 101;
+    ArrayList<Place> placeCoors;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback {
         setContentView(R.layout.activity_maps_shop);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLastLocation();
+        placeCoors = 
        // configureBackButton();
 
 

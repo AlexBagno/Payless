@@ -9,6 +9,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,10 +33,10 @@ public class SearchActivity extends AppCompatActivity {
 
         places = new ArrayList<Place>();
 
-        places.set(1, new Place("48.4720435,34.9996899","Испанское каппучино","cafe"));
-        places.set(2, new Place("48.449755,35.0430067","Шелк от Ульяны","Clothes"));
-        places.set(3, new Place("48.4566809,35.0582073","Hotspot1","hotspot"));
-        places.set(4, new Place("48.453001,35.0414132","Испанское латте","cafe"));
+        places.set(1, new Place(new LatLng(48.4720435,34.9996899),"Испанское каппучино","cafe"));
+        places.set(2, new Place(new LatLng(48.449755,35.0430067),"Шелк от Ульяны","Clothes"));
+        places.set(3, new Place(new LatLng(48.4566809,35.0582073),"Hotspot1","hotspot"));
+        places.set(4, new Place(new LatLng(48.453001,35.0414132),"Испанское латте","cafe"));
 
 
     }
