@@ -30,7 +30,7 @@
         android:layout_marginRight="302dp"
         android:background="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/button_bg" />
+         />
 
 
     <ImageButton
@@ -47,7 +47,7 @@
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:srcCompat="@drawable/arrowr" />
+        />
 
 
     <ImageView
@@ -72,7 +72,7 @@
         app:layout_constraintStart_toStartOf="@+id/back_button"
         app:layout_constraintTop_toTopOf="@+id/back_button"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/arrowup" />
+         />
 
     <Button
         android:id="@+id/Button"
@@ -164,7 +164,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/spinner"
-        app:srcCompat="@drawable/arrowl" />
+         />
 
     <Spinner
         android:id="@+id/spinner"
