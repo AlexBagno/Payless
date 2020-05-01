@@ -8,77 +8,43 @@
 
     <ImageButton
         android:id="@+id/cup_search"
-        android:layout_width="101dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="103dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/wifi_search"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
-
-    <ImageView
-        android:id="@+id/cup"
-        android:layout_width="74dp"
-        android:layout_height="73dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cup_search"
-        app:layout_constraintEnd_toEndOf="@+id/cup_search"
-        app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="@+id/cup_search"
-        app:layout_constraintTop_toTopOf="@+id/cup_search"
-        app:layout_constraintVertical_bias="0.535"
         app:srcCompat="@drawable/g1186" />
 
     <ImageButton
-        android:id="@+id/hanger_search"
-        android:layout_width="101dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:background="#00FFFFFF"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toEndOf="@+id/cup_search"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <ImageView
-        android:id="@+id/hanger"
-        android:layout_width="88dp"
-        android:layout_height="77dp"
-        app:layout_constraintBottom_toBottomOf="@+id/hanger_search"
-        app:layout_constraintEnd_toEndOf="@+id/hanger_search"
-        app:layout_constraintStart_toStartOf="@+id/hanger_search"
-        app:layout_constraintTop_toTopOf="@+id/hanger_search"
-        app:srcCompat="@drawable/g1178" />
-
-    <ImageButton
         android:id="@+id/wifi_search"
-        android:layout_width="101dp"
-        android:layout_height="101dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="103dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="84dp"
         android:background="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/hanger_search"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-         />
+        app:srcCompat="@drawable/g1178" />
 
-    <ImageView
-        android:id="@+id/wifi"
-        android:layout_width="94dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="@+id/wifi_search"
-        app:layout_constraintEnd_toEndOf="@+id/wifi_search"
-        app:layout_constraintStart_toStartOf="@+id/wifi_search"
-        app:layout_constraintTop_toTopOf="@+id/wifi_search"
+    <ImageButton
+        android:id="@+id/hanger_search"
+        android:layout_width="103dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="84dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintStart_toEndOf="@+id/wifi_search"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/g1194" />
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
