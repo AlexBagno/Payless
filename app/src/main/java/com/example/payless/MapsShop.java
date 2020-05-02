@@ -160,6 +160,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback{
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: clicked gps icon");
+                getDeviceLocation();
             }
         });
 
@@ -230,12 +231,13 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback{
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom));
 
-        MarkerOptions options = new MarkerOptions()
+       if (!title.equals("My Location")){MarkerOptions options = new MarkerOptions()
                 .position(latLng)
                 .title(title)
                 .flat(true)
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
         mMap.addMarker(options);
+       }
         hideSoftKeyboard();
 
     }

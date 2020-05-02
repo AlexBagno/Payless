@@ -86,7 +86,7 @@ public class SearchActivity extends AppCompatActivity {
                 neededTag = "cafe";
                 fillCoors(neededTag);
 
-                Intent intent =new Intent(SearchActivity.this,MapsActivity2.class);
+                Intent intent =new Intent(SearchActivity.this,MapsShop.class);
                 intent.putExtra("coors",placeCoors);
                 startActivity(intent);
             }
@@ -118,7 +118,7 @@ public class SearchActivity extends AppCompatActivity {
                 neededTag = "hotspot";
                 fillCoors(neededTag);
 
-                Intent intent =new Intent(SearchActivity.this,Maps3.class);
+                Intent intent =new Intent(SearchActivity.this,MapsShop.class);
                 intent.putExtra("coors",placeCoors);
                 startActivity(intent);
             }
@@ -131,7 +131,7 @@ public class SearchActivity extends AppCompatActivity {
     private void fillCoors(String tag){
         for (Integer i = 0; i < places.size(); i++) {
             if(places.get(i).tag==tag){
-                placeCoors[i] =places.get(i).coor;
+              //  placeCoors[i] =places.get(i).coor;
 
             }
 
