@@ -5,4 +5,5 @@
     <color name="colorAccent">#CB13EC</color>
     <color name="White">#FFFFFF</color>
     <color name="Black">#FF000000</color>
+    <color name="splash_screen">#A9E4EC</color>
 </resources>

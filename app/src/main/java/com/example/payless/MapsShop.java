@@ -60,7 +60,9 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
     private ImageView mGps;
     int PROXIMITY_RADIUS =50000;
     double latitude, longitude;
-    String apiKey = "AIzaSyChp6q5OUPaf3okmibXOKnNRGKC6hdrPOI";
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,7 +177,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
     }
 
 
-    private void geoLocate(){
+    public void geoLocate(){
         Log.d(TAG, "geoLocate: geolocating");
         String searchString = mSearchText.getText().toString();
         Geocoder geocoder = new Geocoder(MapsShop.this);
@@ -186,6 +188,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
             Log.e(TAG, "geoLocate: IOException: " + e.getMessage() );
         }
         if (list.size() > 0){
+            mMap.clear();
         Address address = list.get(0);
         Log.d(TAG, "geoLocate : found a location: " + address.toString());
         LatLng latlng = new LatLng(address.getLatitude(), address.getLongitude());
@@ -233,7 +236,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
 
     }
 
-    private void moveCamera(LatLng latLng, float zoom, String title){
+    public void moveCamera(LatLng latLng, float zoom, String title){
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom));
 
@@ -247,6 +250,7 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
         hideSoftKeyboard();
 
     }
+
 
 
     @Override
@@ -286,52 +290,160 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
 
 
 
+
+
+
     public void onClick (View view){
         Object dataTransfer[] = new Object[2];
         GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+        mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        String url;
+
+
+
+
 
         switch (view.getId()){
             case R.id.cafe:
-                mMap.clear();
-                String cafe = "cafe";
-                String url = getUrl(latitude, longitude, cafe);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                try {
+                    if (mLocationPermissionGranted){
+                        final Task location = mFusedLocationProviderClient.getLastLocation();
+                        location.addOnCompleteListener(new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                if (task.isSuccessful()){
+                                    Log.d(TAG, "onComplete: found location!");
+                                    Location currentLocation = (Location) task.getResult();
+                                    mMap.clear();
+                                    String cafe = "cafe";
+                                    String url = getUrl(currentLocation.getLatitude(),currentLocation.getLongitude(), cafe);
+                                    Object dataTransfer[] = new Object[2];
+                                    dataTransfer[0] = mMap;
+                                    dataTransfer[1] = url;
+                                    GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                                    getNearbyPlacesData.execute(dataTransfer);
+                                    Toast.makeText(MapsShop.this, "Showing Nearby Cafe", Toast.LENGTH_SHORT).show();
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsShop.this, "Showing Nearby Cafe", Toast.LENGTH_SHORT).show();
+
+                                }else {
+                                    Log.d(TAG, "onComplete: current location is null");
+                                    Toast.makeText(MapsShop.this, "unable to get current location", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+
+                }catch (SecurityException e){
+                    Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
+                }
+
                 break;
 
 
             case R.id.store:
-                mMap.clear();
-                String shopping_mall = "shopping_mall";
-                url = getUrl(latitude, longitude, shopping_mall);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                try {
+                    if (mLocationPermissionGranted){
+                        final Task location = mFusedLocationProviderClient.getLastLocation();
+                        location.addOnCompleteListener(new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                if (task.isSuccessful()){
+                                    Log.d(TAG, "onComplete: found location!");
+                                    Location currentLocation = (Location) task.getResult();
+                                    mMap.clear();
+                                    String shopping_mall = "shopping_mall";
+                                    String url = getUrl(currentLocation.getLatitude(),currentLocation.getLongitude(), shopping_mall);
+                                    Object dataTransfer[] = new Object[2];
+                                    dataTransfer[0] = mMap;
+                                    dataTransfer[1] = url;
+                                    GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                                    getNearbyPlacesData.execute(dataTransfer);
+                                    Toast.makeText(MapsShop.this, "Showing Nearby Store", Toast.LENGTH_SHORT).show();
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsShop.this, "Showing Nearby Store", Toast.LENGTH_SHORT).show();
+
+
+                                }else {
+                                    Log.d(TAG, "onComplete: current location is null");
+                                    Toast.makeText(MapsShop.this, "unable to get current location", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+
+                }catch (SecurityException e){
+                    Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
+                }
+
+
+
                 break;
             case R.id.resta:
-                mMap.clear();
-                String restaurant = "restaurant";
-                url = getUrl(latitude, longitude, restaurant);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                try {
+                    if (mLocationPermissionGranted){
+                        final Task location = mFusedLocationProviderClient.getLastLocation();
+                        location.addOnCompleteListener(new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                if (task.isSuccessful()){
+                                    Log.d(TAG, "onComplete: found location!");
+                                    Location currentLocation = (Location) task.getResult();
+                                    mMap.clear();
+                                    String restaurant = "restaurant";
+                                    String url = getUrl(currentLocation.getLatitude(),currentLocation.getLongitude(), restaurant);
+                                    Object dataTransfer[] = new Object[2];
+                                    dataTransfer[0] = mMap;
+                                    dataTransfer[1] = url;
+                                    GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                                    getNearbyPlacesData.execute(dataTransfer);
+                                    Toast.makeText(MapsShop.this, "Showing Nearby Restaurant", Toast.LENGTH_SHORT).show();
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsShop.this, "Showing Nearby Restaurants", Toast.LENGTH_SHORT).show();
+
+
+                                }else {
+                                    Log.d(TAG, "onComplete: current location is null");
+                                    Toast.makeText(MapsShop.this, "unable to get current location", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+
+                }catch (SecurityException e){
+                    Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
+                }
                 break;
             case R.id.clothing_store:
-                mMap.clear();
-                String clothing_store = "clothing_store";
-                url = getUrl(latitude, longitude, clothing_store);
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
+                try {
+                    if (mLocationPermissionGranted){
+                        final Task location = mFusedLocationProviderClient.getLastLocation();
+                        location.addOnCompleteListener(new OnCompleteListener() {
+                            @Override
+                            public void onComplete(@NonNull Task task) {
+                                if (task.isSuccessful()){
+                                    Log.d(TAG, "onComplete: found location!");
+                                    Location currentLocation = (Location) task.getResult();
+                                    mMap.clear();
+                                    String clothing_store = "clothing_store";
+                                    String url = getUrl(currentLocation.getLatitude(),currentLocation.getLongitude(), clothing_store);
+                                    Object dataTransfer[] = new Object[2];
+                                    dataTransfer[0] = mMap;
+                                    dataTransfer[1] = url;
+                                    GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                                    getNearbyPlacesData.execute(dataTransfer);
+                                    Toast.makeText(MapsShop.this, "Showing Nearby Clothing Store", Toast.LENGTH_SHORT).show();
 
-                getNearbyPlacesData.execute(dataTransfer);
-                Toast.makeText(MapsShop.this, "Showing Nearby Clothing Store", Toast.LENGTH_SHORT).show();
+
+
+                                }else {
+                                    Log.d(TAG, "onComplete: current location is null");
+                                    Toast.makeText(MapsShop.this, "unable to get current location", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+
+                }catch (SecurityException e){
+                    Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage());
+                }
                 break;
 
         }
@@ -340,11 +452,10 @@ public class MapsShop extends FragmentActivity implements OnMapReadyCallback  {
 
     private String getUrl(double latitude , double longitude , String nearbyPlace)
     {
-        //latitude = currentLocation.getLatitude();
-       // longitude = currentLocation.getLongitude();
 
-        StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.516,35.0525");
-       // googlePlaceUrl.append("location="+latitude+","+longitude);
+
+        StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googlePlaceUrl.append("location="+latitude+","+longitude);
         googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
         googlePlaceUrl.append("&type="+nearbyPlace);
         googlePlaceUrl.append("&key=AIzaSyCXvAe5yWBb4Nu1mCrzqKQep0VELdcxHRE");
@@ -401,13 +512,14 @@ class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
             String placeName = googlePlace.get("place_name");
             String vicinity = googlePlace.get("vicinity");
+
             double lat = Double.parseDouble( googlePlace.get("lat"));
             double lng = Double.parseDouble( googlePlace.get("lng"));
 
             LatLng latLng = new LatLng( lat, lng);
             markerOptions.position(latLng);
             markerOptions.title(placeName + " : "+ vicinity);
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker));
 
             mMap.addMarker(markerOptions);
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
